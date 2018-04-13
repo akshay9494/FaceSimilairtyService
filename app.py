@@ -15,10 +15,10 @@ if not os.path.isdir(config.image_upload_folder):
 
 logging.getLogger(__file__)
 
-LOG_FORMAT = ('%(levelname) -10s %(asctime)s %(name) -30s %(funcName) '
-              '-35s %(lineno) -5d: %(message)s')
+LOG_FORMAT = ('%(levelname) -10s %(asctime)s %(name) -10s %(funcName) '
+              '-10s %(lineno) -5d: %(message)s')
 
-logname = 'logs_{}.h5'.format(datetime.now().strftime('%Y-%m-%d--%H-%M-%S'))
+logname = 'logs_{}.log'.format(datetime.now().strftime('%Y-%m-%d--%H-%M-%S'))
 
 if config.logToFile:
     logging.basicConfig(level=logging.DEBUG,
@@ -35,4 +35,7 @@ app = Flask(__name__)
 
 api.init_app(app)
 
-app.run(debug=False)
+if config.run_in_debug:
+    app.run(port=config.port, debug=True)
+else:
+    app.run(port=config.port, debug=False)

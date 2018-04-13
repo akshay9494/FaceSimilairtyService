@@ -10,3 +10,5 @@ class Configurations:
         self.log_folder = os.path.join(self.project_home, 'logs')
         self.image_upload_folder = os.path.join(self.project_home, 'image_uploads')
         self.logToFile = config['logToFile']
+        self.port = config['port']
+        self.run_in_debug = config['runInDebugMode']

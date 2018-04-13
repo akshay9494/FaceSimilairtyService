@@ -1,4 +1,6 @@
 {
-  "projectHome": "/Users/akshay/PycharmProjects/face_comparision",
-  "logToFile": false
+  "projectHome": "/Users/akshay/Documents/GitHub/FaceSimilairtyService",
+  "logToFile": true,
+  "port": 5001,
+  "runInDebugMode": false
 }
